@@ -15,6 +15,8 @@ def transcribe(dna_seq):
 if __name__ == '__main__':
     with open('rosalind_rna.txt', 'r') as file:
         sequence = file.read().strip()
-    print(transcribe(sequence))
+    result = transcribe(sequence)
+    with open('results.txt', 'w') as file:
+        file.write(result)
 
 

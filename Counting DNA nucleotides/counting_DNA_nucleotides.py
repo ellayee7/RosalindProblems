@@ -24,4 +24,6 @@ def countDNAnuc(seq):
 if __name__ == '__main__':
     with open('rosalind_dna.txt', 'r') as file:
         sequence = file.read().strip()
-    print(countDNAnuc(sequence))
+    result = countDNAnuc(sequence)
+    with open('results.txt', 'w') as file:
+        file.write(result)
