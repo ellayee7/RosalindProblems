@@ -14,10 +14,13 @@ rabbits produces a litter of k rabbit pairs (instead of only 1 pair).
  """
 
 def rabbits(n, k):
-    if n <= 2:
-        return 1
-    else:
-        return rabbits(n - 2, k) * k + rabbits(n-1,k)
+    prev1 = 1
+    prev2 = 1
+    for months in range(2, n):
+        cur = prev1 + k * prev2
+        prev2 = prev1
+        prev1 = cur
+    return cur
 
 if __name__ == '__main__':
     n = 35
